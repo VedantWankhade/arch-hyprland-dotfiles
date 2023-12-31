@@ -1,0 +1,23 @@
+set scrolloff=8
+set number
+set relativenumber 
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set smartindent
+set expandtab
+set termguicolors
+filetype plugin on
+syntax on
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+call plug#end()
+colorscheme catppuccin-macchiato 
+
+let mapleader = " "
+nnoremap <leader>p :Vex<CR>
+nnoremap <leader>gp :GFiles<CR>
+nnoremap <leader>fp :Files<CR>
+nnoremap <C-p> :GFiles<CR>
